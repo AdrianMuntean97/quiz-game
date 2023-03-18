@@ -39,6 +39,10 @@
     margin-top: 1.5rem;
   }
 
+  button {
+    cursor: pointer;
+  }
+
   #helping-actions {
     padding: 1rem;
     display: flex;
@@ -51,5 +55,58 @@
     margin-inline: 0.25rem;
   }
   
+  #answer-buttons {
+    display: flex;
+    flex-direction: column;
+  }
   
+  #answer-buttons button {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  #submit-btn,
+  #next-btn {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #2dc77f;
+    color: #fff;
+    position: absolute;
+    bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  #next-btn {
+    left: 1rem;
+  }
+
+  #submit-btn {
+    right: 1rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  #submit-btn:disabled,
+  #next-btn:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  #name {
+    text-align: center;
+    font-size: 1.25rem;
+    bottom: 3rem;
+    margin-top: 2rem;
+  }
+
+  #score {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1rem;
+  }
   
