@@ -12,6 +12,9 @@ const answerButtons = document.getElementById("answer-buttons");
 
 document.addEventListener("DOMContentLoaded", function() {
  nextQuestion();
+ nextButton.addEventListener("click", function() {
+    nextQuestion();
+ })
 });
 
 function nextQuestion() {
@@ -25,7 +28,7 @@ function nextQuestion() {
     const questionData = questions[currentQuestion];
     question.textContent = questionData["question"];
     question.setAttribute("data-indexQuestion", currentQuestion);
-    
+
     let variants = "";
     let options = questionData["options"];
     for (let option of options) {
