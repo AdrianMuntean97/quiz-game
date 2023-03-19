@@ -37,11 +37,24 @@ function nextQuestion() {
         variants += `<button class="answer-btn">${option}</button>`;
     }
     answerButtons.innerHTML = variants;
-    nextButton.classList.add("hidden"); 
+    nextButton.classList.add("hidden");
+    clickedAnswer();
 };
 
 
 
 function confirmAnswer(){
 
+};
+
+function clickedAnswer() {
+    const answers = document.getElementsByClassName("answer-btn");
+    for (const answer of answers) {
+        answer.addEventListener("click", function() {
+            for (const selected of answers) {
+                selected.classList.remove("selected");
+            }
+            this.classList.add("selected");
+        })
+    }
 };

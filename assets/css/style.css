@@ -110,3 +110,6 @@
     font-size: 1rem;
   }
   
+  .selected {
+    background-color: rgba(165, 166, 167, 0.685);
+  }
