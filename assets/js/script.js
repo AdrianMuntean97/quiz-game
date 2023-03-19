@@ -6,7 +6,7 @@ const fiftyFifty = document.getElementById("fifty-fifty");
 const extraTime = document.getElementById("extra-time");
 const submitButton = document.getElementById("submit-btn");
 const nextButton = document.getElementById("next-btn");
-const name = document.getElementById("name");
+const playerName = document.getElementById("name");
 const score = document.getElementById("score");
 const answerButtons = document.getElementById("answer-buttons");
 
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   submitButton.addEventListener("click", function() {
     checkAnswer();
   });
+  playerName.textContent= prompt("Enter your name", "Player");
 });
 
 function nextQuestion() {
@@ -48,6 +49,9 @@ function nextQuestion() {
 
 
 function checkAnswer(){
+    if (document.getElementsByClassName("selected").length === 0) {
+        return;
+    } 
     let currentQuestion = question.getAttribute("data-indexQuestion");
     const rightAnswer = questions[currentQuestion]["answer"];
 
@@ -63,7 +67,6 @@ function checkAnswer(){
         }
        }
     }
-
 
     if(rightAnswer === selectedAnswer.innerHTML) {
         selectedAnswer.classList.remove("selected");
