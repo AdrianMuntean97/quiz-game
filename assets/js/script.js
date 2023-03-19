@@ -21,8 +21,10 @@ function nextQuestion() {
   let currentQuestion = question.getAttribute("data-indexQuestion");
   if (currentQuestion === "") {
     currentQuestion = 0; 
-  } else {
+  } else if(currentQuestion < questions.length - 1) {
     currentQuestion++;
+  } else {
+    return;
   }
 
     const questionData = questions[currentQuestion];
@@ -35,6 +37,7 @@ function nextQuestion() {
         variants += `<button class="answer-btn">${option}</button>`;
     }
     answerButtons.innerHTML = variants;
+    nextButton.classList.add("hidden"); 
 };
 
 
