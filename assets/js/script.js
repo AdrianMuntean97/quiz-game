@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
  nextButton.addEventListener("click", function() {
     nextQuestion();
  })
+  submitButton.addEventListener("click", function() {
+    checkAnswer();
+  });
 });
 
 function nextQuestion() {
@@ -38,13 +41,42 @@ function nextQuestion() {
     }
     answerButtons.innerHTML = variants;
     nextButton.classList.add("hidden");
+    submitButton.classList.remove("hidden");
     clickedAnswer();
 };
 
 
 
-function confirmAnswer(){
+function checkAnswer(){
+    let currentQuestion = question.getAttribute("data-indexQuestion");
+    const rightAnswer = questions[currentQuestion]["answer"];
 
+    let selectedAnswer = null;
+    const answers = document.getElementsByClassName("answer-btn");
+    for (const answer of answers) {
+       if (answer.classList.contains("selected")) {
+        selectedAnswer = answer;
+       } else {
+        answer.setAttribute("disabled", true);
+        if (answer.innerHTML === rightAnswer) {
+            answer.classList.add("correct-answer");
+        }
+       }
+    }
+
+
+    if(rightAnswer === selectedAnswer.innerHTML) {
+        selectedAnswer.classList.remove("selected");
+        selectedAnswer.classList.add("correct-answer");
+        nextButton.classList.remove("hidden");
+        submitButton.classList.add("hidden");
+
+    } else {
+        selectedAnswer.classList.remove("selected");
+        selectedAnswer.classList.add("wrong-answer");
+        nextButton.classList.remove("hidden");
+        submitButton.classList.add("hidden");
+    }
 };
 
 function clickedAnswer() {
@@ -58,3 +90,4 @@ function clickedAnswer() {
         })
     }
 };
+

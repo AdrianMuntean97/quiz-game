@@ -79,11 +79,8 @@
     font-size: 1.25rem;
   }
 
+  #submit-btn,
   #next-btn {
-    left: 1rem;
-  }
-
-  #submit-btn {
     right: 1rem;
   }
 
@@ -112,4 +109,12 @@
   
   .selected {
     background-color: rgba(165, 166, 167, 0.685);
+  }
+
+  .correct-answer {
+    background-color: #2dc77f;
+  }
+
+  .wrong-answer {
+    background-color: rgba(255, 0, 0, 0.527);
   }
