@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         startGame.click();
     }
   });
-
+  shuffleQuestions();
   nextQuestion();
  nextButton.addEventListener("click", function() {
     nextQuestion();
@@ -60,6 +60,7 @@ function nextQuestion() {
     for (let option of options) {
         variants += `<button class="answer-btn">${option}</button>`;
     }
+
     answerButtons.innerHTML = variants;
     
     nextButton.classList.add("hidden");
@@ -70,7 +71,8 @@ function nextQuestion() {
 function checkAnswer(){
     if (document.getElementsByClassName("selected").length === 0) {
         return;
-    } 
+    };
+
     let currentQuestion = question.getAttribute("data-indexQuestion");
     const rightAnswer = questions[currentQuestion]["answer"];
 
@@ -85,7 +87,7 @@ function checkAnswer(){
             answer.classList.add("correct-answer");
         }
        }
-    }
+    };
 
     if(rightAnswer === selectedAnswer.innerHTML) {
         selectedAnswer.classList.remove("selected");
@@ -137,3 +139,25 @@ function endGame() {
 function incrementScore() {
   score.textContent = parseInt(score.innerText) + 1;
 };
+
+function shuffleQuestions() {
+  shuffleArray(questions);
+  for (elem of questions) {
+    shuffleArray(elem.options);
+  }
+};
+
+function shuffleArray(array) {
+  const arrayLength = array.length;
+
+  for (let i = 0; i < arrayLength; i++) {
+
+    const randomIndex = Math.floor(Math.random() * arrayLength);
+
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  };
+
+}
+

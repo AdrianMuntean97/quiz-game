@@ -14,13 +14,13 @@
   
   .container {
     position: relative;
-    width: 80%;
-    height: 70%;
+    width: 90%;
     background-color: #f3d38a;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
+    min-height: 70%;
   }
       
   h1 {
@@ -75,10 +75,11 @@
   }
   
   #answer-buttons button {
-    margin-top: 1rem;
     padding: 1rem;
     border-radius: 5px;
     border: none;
+    width: 60%;
+    margin: 1rem auto 0 auto;
   }
   
   #submit-btn,
