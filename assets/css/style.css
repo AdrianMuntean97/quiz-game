@@ -20,14 +20,9 @@
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .container h1,
-  .container h2,
-  .container h3 {
     text-align: center;
   }
-  
+      
   h1 {
     padding: 0.5rem;
     margin-top: 0.25rem;
@@ -68,7 +63,8 @@
   }
   
   #submit-btn,
-  #next-btn {
+  #next-btn,
+  #new-game {
     padding: 0.75rem;
     border-radius: 5px;
     border: none;
@@ -77,23 +73,19 @@
     position: absolute;
     bottom: 1rem;
     font-size: 1.25rem;
-  }
-
-  #submit-btn,
-  #next-btn {
     right: 1rem;
   }
 
-  .hidden {
-    display: none;
-  }
-  
   #submit-btn:disabled,
   #next-btn:disabled {
     background-color: #e0e0e0;
     cursor: not-allowed;
   }
-  
+
+  .hidden {
+    display: none;
+  }
+    
   #name {
     text-align: center;
     font-size: 1.25rem;
@@ -118,3 +110,10 @@
   .wrong-answer {
     background-color: rgba(255, 0, 0, 0.527);
   }
+
+  button:hover {
+    opacity: 0.9;
+  }
+
+  
+  

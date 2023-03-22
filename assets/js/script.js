@@ -9,16 +9,20 @@ const nextButton = document.getElementById("next-btn");
 const playerName = document.getElementById("name");
 const score = document.getElementById("score");
 const answerButtons = document.getElementById("answer-buttons");
+const newGame = document.getElementById("new-game");
 
 document.addEventListener("DOMContentLoaded", function() {
  nextQuestion();
  nextButton.addEventListener("click", function() {
     nextQuestion();
  })
+ newGame.addEventListener("click", function() {
+  location.reload();
+ })
   submitButton.addEventListener("click", function() {
     checkAnswer();
   });
-  playerName.textContent= prompt("Enter your name", "Player");
+  //playerName.textContent= prompt("Enter your name", "Player");
 });
 
 function nextQuestion() {
@@ -28,6 +32,7 @@ function nextQuestion() {
   } else if(currentQuestion < questions.length - 1) {
     currentQuestion++;
   } else {
+    endGame();
     return;
   }
 
@@ -93,4 +98,14 @@ function clickedAnswer() {
         })
     }
 };
+
+function endGame() {
+  question.textContent = `Congratulation!`;
+  fiftyFifty.remove();
+  extraTime.remove();
+  answerButtons.remove();
+  submitButton.remove();
+  nextButton.remove();
+  newGame.classList.remove("hidden");
+}
 
