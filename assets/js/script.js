@@ -131,9 +131,10 @@ function endGame() {
   submitButton.remove();
   nextButton.remove();
   newGame.classList.remove("hidden");
-  document.addEventListener("keydown", function() {
-    newGame.click();
-  });
+ // document.addEventListener("keydown", function() {
+  //  newGame.click();
+ // });
+  score.textContent = `You answered correctly to ${score.innerText} out of ${questions.length} questions!`
 };
 
 function incrementScore() {
