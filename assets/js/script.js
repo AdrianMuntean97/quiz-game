@@ -10,9 +10,16 @@ const playerName = document.getElementById("name");
 const score = document.getElementById("score");
 const answerButtons = document.getElementById("answer-buttons");
 const newGame = document.getElementById("new-game");
+const inputName = document.getElementById("input-name");
+const startGame = document.getElementById("submit-name");
 
 document.addEventListener("DOMContentLoaded", function() {
- nextQuestion();
+  startGame.addEventListener("click", function() {
+    playerName.textContent = inputName.value;
+    document.getElementById("player-name").classList.add("hidden");
+    document.getElementById("game").classList.remove("hidden");
+  })
+  nextQuestion();
  nextButton.addEventListener("click", function() {
     nextQuestion();
  })
@@ -22,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
   submitButton.addEventListener("click", function() {
     checkAnswer();
   });
-  //playerName.textContent= prompt("Enter your name", "Player");
 });
 
 function nextQuestion() {

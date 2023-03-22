@@ -5,8 +5,13 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-
-    <div class="container">
+    <div class="container" id="player-name">
+      <h1>Welcome to Quiz Game!</h1>
+      <h2 class="name">Please enter your Name</h2>
+      <input id="input-name" type="text" required autofocus><br>
+      <button id="submit-name">Start Game!</button>
+    </div>
+    <div class="container hidden" id="game">
       <h1>Quiz Game</h1>
       <h2 id="question" data-indexQuestion=""></h2>
       <div id="helping-actions">
