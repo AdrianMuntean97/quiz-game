@@ -18,15 +18,24 @@ document.addEventListener("DOMContentLoaded", function() {
     playerName.textContent = inputName.value;
     document.getElementById("player-name").classList.add("hidden");
     document.getElementById("game").classList.remove("hidden");
-  })
+  });
+
+  inputName.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        startGame.click();
+    }
+  });
+
   nextQuestion();
  nextButton.addEventListener("click", function() {
     nextQuestion();
- })
+ });
+
  newGame.addEventListener("click", function() {
   location.reload();
- })
-  submitButton.addEventListener("click", function() {
+ });
+ 
+submitButton.addEventListener("click", function() {
     checkAnswer();
   });
 });
@@ -52,12 +61,11 @@ function nextQuestion() {
         variants += `<button class="answer-btn">${option}</button>`;
     }
     answerButtons.innerHTML = variants;
+    
     nextButton.classList.add("hidden");
     submitButton.classList.remove("hidden");
     clickedAnswer();
 };
-
-
 
 function checkAnswer(){
     if (document.getElementsByClassName("selected").length === 0) {
@@ -102,7 +110,14 @@ function clickedAnswer() {
                 selected.classList.remove("selected");
             }
             this.classList.add("selected");
-        })
+        });
+        answer.addEventListener("keydown", function() {
+          if (submitButton.classList.contains("hidden") === false) {
+            submitButton.click();
+          } else {
+            nextButton.click();
+          }
+        });
     }
 };
 
@@ -114,9 +129,11 @@ function endGame() {
   submitButton.remove();
   nextButton.remove();
   newGame.classList.remove("hidden");
-}
+  document.addEventListener("keydown", function() {
+    newGame.click();
+  });
+};
 
 function incrementScore() {
   score.textContent = parseInt(score.innerText) + 1;
-}
-
+};
