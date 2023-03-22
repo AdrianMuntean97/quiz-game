@@ -78,6 +78,7 @@ function checkAnswer(){
         selectedAnswer.classList.add("correct-answer");
         nextButton.classList.remove("hidden");
         submitButton.classList.add("hidden");
+        incrementScore();
 
     } else {
         selectedAnswer.classList.remove("selected");
@@ -107,5 +108,9 @@ function endGame() {
   submitButton.remove();
   nextButton.remove();
   newGame.classList.remove("hidden");
+}
+
+function incrementScore() {
+  score.textContent = parseInt(score.innerText) + 1;
 }
 
