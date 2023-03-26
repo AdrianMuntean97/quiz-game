@@ -100,9 +100,12 @@
   }
 
   #submit-btn:disabled,
-  #next-btn:disabled {
+  #next-btn:disabled,
+  #fifty-fifty:disabled,
+  #extra-time:disabled {
     background-color: #e0e0e0;
     cursor: not-allowed;
+    color: slategray;
   }
 
   .hidden {
