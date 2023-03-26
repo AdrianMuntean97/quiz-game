@@ -5,9 +5,9 @@ const questions = [
         "answer": "Paris"
       },
       {
-        "question": "What is the largest ocean in the world?",
-        "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-        "answer": "Pacific Ocean"
+        "question": "Which of these is not a programming language?",
+        "options": ["Python", "Java", "C++", "Photoshop"],
+        "answer": "Photoshop"
       },
       {
         "question": "Who is the author of the Harry Potter book series?",
@@ -35,9 +35,9 @@ const questions = [
         "answer": "Vincent van Gogh"
       },
       {
-        "question": "What is the name of the longest river in Africa?",
-        "options": ["Nile River", "Congo River", "Zambezi River", "Orange River"],
-        "answer": "Nile River"
+        "question": "What is the largest mammal in the world?",
+        "options": ["Elephant", "Giraffe", "Blue Whale", "Hippopotamus"],
+        "answer": "Blue Whale"
       },
       {
         "question": "What is the chemical symbol for gold?",
@@ -45,9 +45,9 @@ const questions = [
         "answer": "Au"
       },
       {
-        "question": "What is the name of the largest desert in the world?",
-        "options": ["Sahara", "Arabian", "Gobi", "Antarctica"],
-        "answer": "Sahara"
+        "question": "What is the largest continent by land area?",
+        "options": ["Africa", "South America", "Asia", "Europe"],
+        "answer": "Asia"
       },
       {
         "question": "Which country has the largest population in the world?",
@@ -80,9 +80,9 @@ const questions = [
         "answer": "Jupiter"
       },
       {
-        "question": "What is the name of the smallest planet in our solar system?",
-        "options": ["Mercury", "Venus", "Mars", "Earth"],
-        "answer": "Mercury"
+        "question": "Who invented the telephone?",
+        "options": ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Albert Einstein"],
+        "answer": "Alexander Graham Bell"
       },
       {
         "question": "What is the name of the world's largest hot desert?",
@@ -105,9 +105,9 @@ const questions = [
         "answer": "Tokyo"
       },
       {
-        "question": "What is the name of the smallest country in the world?",
-        "options": ["San Marino", "Liechtenstein", "Monaco", "Vatican City"],
-        "answer": "Vatican City"
+        "question": "What is the largest organ in the human body?",
+        "options": ["Liver", "Brain", "Heart", "Skin"],
+        "answer": "Skin"
       },
       {
         "question": "What is the name of the world's largest ocean?",
@@ -140,9 +140,9 @@ const questions = [
         "answer": "Greenland"
       },
       {
-        "question": "What is the name of the world's largest canyon?",
-        "options": ["Grand Canyon", "Fish River Canyon", "Yarlung Tsangpo Grand Canyon", "Blyde River Canyon"],
-        "answer": "Yarlung Tsangpo Grand Canyon"
+        "question": "What kind of courses does Code Institute offer?",
+        "options": ["Graphic design courses","Coding bootcamps","Cooking classes","Language courses"],
+        "answer": "Coding bootcamps"
       },
       {
         "question": "What is the name of the world's largest flower?",
