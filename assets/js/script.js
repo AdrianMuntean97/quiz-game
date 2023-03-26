@@ -207,7 +207,6 @@ function timerFunction() {
       question.textContent = `Time expired!`;
     }
   }, 1000);
-  console.log(timer);
 }
 
 function extraTimeFunction() {
