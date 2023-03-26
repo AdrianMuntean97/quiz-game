@@ -49,12 +49,17 @@
     border: none;
   }
 
-  #submit-name {
+  #submit-name,
+  #feedback-submit,
+  #fifty-fifty,
+  #extra-time {
     padding: 1rem;
     border-radius: 5px;
     border: none;
     background-color: #2dc77f;
     color: #fff;
+    font-size: 1rem;
+    margin-inline: 0.25rem;
   }
 
   button {
@@ -65,12 +70,6 @@
     padding: 1rem;
     display: flex;
     justify-content: center;
-  }
-
-  #fifty-fifty,
-  #extra-time {
-    font-size: 0.75rem;
-    margin-inline: 0.25rem;
   }
   
   #answer-buttons {
@@ -96,7 +95,7 @@
     color: #fff;
     position: absolute;
     bottom: 1rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     right: 1rem;
   }
 
@@ -112,7 +111,7 @@
     
   #name {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     bottom: 3rem;
     margin-top: 2rem;
   }
@@ -120,7 +119,7 @@
   #score {
     margin-top: 2rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   
   .selected {
@@ -138,6 +137,16 @@
   button:hover {
     opacity: 0.9;
   }
+
+  #feedback-area {
+    resize: none;
+    width: 25%;
+    font-size: large;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    border-radius: px;
+  }
+
 
   
   

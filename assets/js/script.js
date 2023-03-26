@@ -13,6 +13,7 @@ const newGame = document.getElementById("new-game");
 const inputName = document.getElementById("input-name");
 const startGame = document.getElementById("submit-name");
 const timer = document.getElementById("timer");
+const feedbackContent = document.getElementById("feedback-content");
 
 document.addEventListener("DOMContentLoaded", function() {
   startGame.addEventListener("click", function() {
@@ -51,6 +52,11 @@ document.addEventListener("DOMContentLoaded", function() {
 submitButton.addEventListener("click", function() {
     checkAnswer();
   });
+
+document.getElementById("feedback-submit").addEventListener("click", function() {
+  console.log(document.getElementById("feedback-area").value);
+  feedbackContent.innerHTML = `<h3>Thank you for your feedback!</h3>`;
+})
 });
 
 function nextQuestion() {
@@ -144,6 +150,7 @@ function endGame() {
   submitButton.remove();
   nextButton.remove();
   newGame.classList.remove("hidden");
+  feedbackContent.classList.remove("hidden");
   score.textContent = `You answered correctly to ${score.innerText} out of ${questions.length} questions!`;
 }
 
