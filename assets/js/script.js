@@ -58,11 +58,11 @@ function nextQuestion() {
   }
 
     const questionData = questions[currentQuestion];
-    question.textContent = questionData["question"];
+    question.textContent = questionData.question;
     question.setAttribute("data-indexQuestion", currentQuestion);
 
     let variants = "";
-    let options = questionData["options"];
+    let options = questionData.options;
     for (let option of options) {
         variants += `<button class="answer-btn">${option}</button>`;
     }
@@ -72,15 +72,15 @@ function nextQuestion() {
     nextButton.classList.add("hidden");
     submitButton.classList.remove("hidden");
     clickedAnswer();
-};
+}
 
 function checkAnswer(){
     if (document.getElementsByClassName("selected").length === 0) {
         return;
-    };
+    }
 
     let currentQuestion = question.getAttribute("data-indexQuestion");
-    const rightAnswer = questions[currentQuestion]["answer"];
+    const rightAnswer = questions[currentQuestion].answer;
 
     let selectedAnswer = null;
     const answers = document.getElementsByClassName("answer-btn");
@@ -93,7 +93,7 @@ function checkAnswer(){
             answer.classList.add("correct-answer");
         }
        }
-    };
+    }
 
     if(rightAnswer === selectedAnswer.innerHTML) {
         selectedAnswer.classList.remove("selected");
@@ -108,7 +108,7 @@ function checkAnswer(){
         nextButton.classList.remove("hidden");
         submitButton.classList.add("hidden");
     }
-};
+}
 
 function clickedAnswer() {
     const answers = document.getElementsByClassName("answer-btn");
@@ -127,7 +127,7 @@ function clickedAnswer() {
           }
         });
     }
-};
+}
 
 function endGame() {
   question.textContent = `Congratulation!`;
@@ -137,19 +137,19 @@ function endGame() {
   submitButton.remove();
   nextButton.remove();
   newGame.classList.remove("hidden");
-  score.textContent = `You answered correctly to ${score.innerText} out of ${questions.length} questions!`
-};
+  score.textContent = `You answered correctly to ${score.innerText} out of ${questions.length} questions!`;
+}
 
 function incrementScore() {
   score.textContent = parseInt(score.innerText) + 1;
-};
+}
 
 function shuffleQuestions() {
   shuffleArray(questions);
-  for (elem of questions) {
+  for (const elem of questions) {
     shuffleArray(elem.options);
   }
-};
+}
 
 function shuffleArray(array) {
   const arrayLength = array.length;
@@ -161,7 +161,7 @@ function shuffleArray(array) {
     const temp = array[i];
     array[i] = array[randomIndex];
     array[randomIndex] = temp;
-  };
+  }
 
 }
 
@@ -169,7 +169,7 @@ function fiftyFiftyFunction() {
   const questionIndex = question.getAttribute("data-indexQuestion");
   const questionData = questions[questionIndex];
   let wrongAnswers=[];
-  for (answer of questionData.options) {
+  for (const answer of questionData.options) {
     if (answer !== questionData.answer) {
       wrongAnswers.push(answer);
     }
@@ -179,11 +179,10 @@ function fiftyFiftyFunction() {
   wrongAnswers.pop();
 
   const answerBtns = document.getElementsByClassName("answer-btn");
-  for (button of answerBtns) {
+  for (const button of answerBtns) {
     if (wrongAnswers.includes(button.innerText)) {
       button.setAttribute("disabled", true);
       console.log(wrongAnswers);
     }
   }
-  
-};
+}
