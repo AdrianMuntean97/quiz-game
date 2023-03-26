@@ -194,7 +194,7 @@ function fiftyFiftyFunction() {
   }
 }
 
-let time = 5;
+let time = 900;
 function timerFunction() {
   const x = setInterval(function() {
     time--;
