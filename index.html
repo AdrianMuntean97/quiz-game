@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <title>Quiz Game</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+
     <div class="container" id="player-name">
       <h1>Welcome to Quiz Game!</h1>
       <h2 class="name">Please enter your Name</h2>
       <input id="input-name" type="text" required autofocus maxlength="30"><br>
       <button id="submit-name">Start Game!</button>
     </div>
+
     <div class="container hidden" id="game">
       <h1>Quiz Game</h1>
       <h2 id="question" data-indexQuestion=""></h2>
+
+      <div id="timer">15:00</div>
+
       <div id="helping-actions">
-        <button id="fifty-fifty">Fifty-Fifty<i class="fa-solid fa-divide"></i></button>
-        <button id="extra-time">Extra Time<i class="fa-solid fa-clock-rotate-left"></i></button>
+        <button id="fifty-fifty">Fifty-Fifty <i class="fa-solid fa-divide"></i></button>
+        <button id="extra-time">Extra Time <i class="fa-solid fa-clock-rotate-left"></i></button>
       </div>
+
       <div id="answer-buttons">
       </div>
+
       <button id="submit-btn">Submit</button>
       <button id="next-btn" class="hidden">Next</button>
       <button id="new-game" class="hidden">New Game</button>
@@ -30,5 +37,6 @@
     <script src="assets/js/questions.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/fffd35bba8.js" crossorigin="anonymous"></script>
+
   </body>
 </html>

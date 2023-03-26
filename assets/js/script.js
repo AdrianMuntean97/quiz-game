@@ -12,12 +12,14 @@ const answerButtons = document.getElementById("answer-buttons");
 const newGame = document.getElementById("new-game");
 const inputName = document.getElementById("input-name");
 const startGame = document.getElementById("submit-name");
+const timer = document.getElementById("timer");
 
 document.addEventListener("DOMContentLoaded", function() {
   startGame.addEventListener("click", function() {
     playerName.textContent = inputName.value;
     document.getElementById("player-name").classList.add("hidden");
     document.getElementById("game").classList.remove("hidden");
+    timerFunction();
   });
 
   inputName.addEventListener("keydown", function(event) {
@@ -27,9 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   fiftyFifty.addEventListener("click", function() {
-    fiftyFiftyFunction();
     fiftyFifty.setAttribute("disabled", true);
+    fiftyFiftyFunction();
   });
+
+  extraTime.addEventListener("click", function() {
+    extraTime.setAttribute("disabled", true);
+    extraTimeFunction();
+  })
 
   shuffleQuestions();
   nextQuestion();
@@ -185,4 +192,24 @@ function fiftyFiftyFunction() {
       console.log(wrongAnswers);
     }
   }
+}
+
+let time = 5;
+function timerFunction() {
+  const x = setInterval(function() {
+    time--;
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    timer.textContent = minutes + ":" + seconds;
+    if(time <= 0) {
+      clearInterval(x);
+      endGame();
+      question.textContent = `Time expired!`;
+    }
+  }, 1000);
+  console.log(timer);
+}
+
+function extraTimeFunction() {
+  time += 120;
 }
