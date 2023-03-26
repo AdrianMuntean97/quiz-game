@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
         startGame.click();
     }
   });
+
+  fiftyFifty.addEventListener("click", function() {
+    fiftyFiftyFunction();
+    fiftyFifty.setAttribute("disabled", true);
+  });
+
   shuffleQuestions();
   nextQuestion();
  nextButton.addEventListener("click", function() {
@@ -131,9 +137,6 @@ function endGame() {
   submitButton.remove();
   nextButton.remove();
   newGame.classList.remove("hidden");
- // document.addEventListener("keydown", function() {
-  //  newGame.click();
- // });
   score.textContent = `You answered correctly to ${score.innerText} out of ${questions.length} questions!`
 };
 
@@ -162,3 +165,25 @@ function shuffleArray(array) {
 
 }
 
+function fiftyFiftyFunction() {
+  const questionIndex = question.getAttribute("data-indexQuestion");
+  const questionData = questions[questionIndex];
+  let wrongAnswers=[];
+  for (answer of questionData.options) {
+    if (answer !== questionData.answer) {
+      wrongAnswers.push(answer);
+    }
+  }
+
+  shuffleArray(wrongAnswers);
+  wrongAnswers.pop();
+
+  const answerBtns = document.getElementsByClassName("answer-btn");
+  for (button of answerBtns) {
+    if (wrongAnswers.includes(button.innerText)) {
+      button.setAttribute("disabled", true);
+      console.log(wrongAnswers);
+    }
+  }
+  
+};
