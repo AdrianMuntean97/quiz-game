@@ -15,74 +15,73 @@ const startGame = document.getElementById("submit-name");
 const timer = document.getElementById("timer");
 const feedbackContent = document.getElementById("feedback-content");
 
-document.addEventListener("DOMContentLoaded", function() {
-  startGame.addEventListener("click", function() {
-    playerName.textContent = inputName.value;
-    document.getElementById("player-name").classList.add("hidden");
-    document.getElementById("game").classList.remove("hidden");
-    timerFunction();
-  });
+/**
+ * Creating the main interface where players select their name
+ */
+
+  document.addEventListener("DOMContentLoaded", function() {
+    startGame.addEventListener("click", function() {
+      playerName.textContent = inputName.value;
+      document.getElementById("player-name").classList.add("hidden");
+      document.getElementById("game").classList.remove("hidden");
+      timerFunction();
+    });
 
   inputName.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         startGame.click();
-    }
+      }
+    });
+  
+/**
+ * Event listeners for Next , Submit and New Game buttons 
+ */
+
+  nextButton.addEventListener("click", function() {
+    nextQuestion();
   });
+
+  newGame.addEventListener("click", function() {
+  location.reload();
+  });
+
+  submitButton.addEventListener("click", function() {
+    checkAnswer();
+  });
+
+/**
+ * Functions for fifty/fifty and extra time
+ */
 
   fiftyFifty.addEventListener("click", function() {
     fiftyFifty.setAttribute("disabled", true);
     fiftyFiftyFunction();
   });
 
-  extraTime.addEventListener("click", function() {
-    extraTime.setAttribute("disabled", true);
-    extraTimeFunction();
-  })
-
-  shuffleQuestions();
-  nextQuestion();
- nextButton.addEventListener("click", function() {
-    nextQuestion();
- });
-
- newGame.addEventListener("click", function() {
-  location.reload();
- });
- 
-submitButton.addEventListener("click", function() {
-    checkAnswer();
-  });
-
-document.getElementById("feedback-submit").addEventListener("click", function() {
-  console.log(document.getElementById("feedback-area").value);
-  feedbackContent.innerHTML = `<h3>Thank you for your feedback!</h3>`;
-})
-});
-
-function fiftyFiftyFunction() {
-  const questionIndex = question.getAttribute("data-indexQuestion");
-  const questionData = questions[questionIndex];
-  let wrongAnswers=[];
-  for (const answer of questionData.options) {
-    if (answer !== questionData.answer) {
-      wrongAnswers.push(answer);
+  function fiftyFiftyFunction() {
+    const questionIndex = question.getAttribute("data-indexQuestion");
+    const questionData = questions[questionIndex];
+    let wrongAnswers=[];
+    for (const answer of questionData.options) {
+      if (answer !== questionData.answer) {
+        wrongAnswers.push(answer);
+      }
+    }
+  
+    shuffleArray(wrongAnswers);
+    wrongAnswers.pop();
+  
+    const answerBtns = document.getElementsByClassName("answer-btn");
+    for (const button of answerBtns) {
+      if (wrongAnswers.includes(button.innerText)) {
+        button.setAttribute("disabled", true);
+        console.log(wrongAnswers);
+      }
     }
   }
 
-  shuffleArray(wrongAnswers);
-  wrongAnswers.pop();
-
-  const answerBtns = document.getElementsByClassName("answer-btn");
-  for (const button of answerBtns) {
-    if (wrongAnswers.includes(button.innerText)) {
-      button.setAttribute("disabled", true);
-      console.log(wrongAnswers);
-    }
-  }
-}
-
-let time = 900;
-function timerFunction() {
+  let time = 900;
+  function timerFunction() {
   const x = setInterval(function() {
     time--;
     const minutes = Math.floor(time / 60);
@@ -94,18 +93,34 @@ function timerFunction() {
       question.textContent = `Time expired!`;
     }
   }, 1000);
-}
+  }
 
-function extraTimeFunction() {
-  time += 120;
-}
+  extraTime.addEventListener("click", function() {
+    extraTime.setAttribute("disabled", true);
+    extraTimeFunction();
+  })
 
-function shuffleQuestions() {
+  function extraTimeFunction() {
+    time += 120;
+  }
+
+/**
+ * Generating a random question
+ */
+
+  function shuffleQuestions() {
   shuffleArray(questions);
   for (const elem of questions) {
     shuffleArray(elem.options);
   }
-}
+  };
+
+  shuffleQuestions();
+  nextQuestion();
+
+/**
+ * Creating the next question and answer variants
+ */
 
 function nextQuestion() {
   let currentQuestion = question.getAttribute("data-indexQuestion");
@@ -135,6 +150,10 @@ function nextQuestion() {
     clickedAnswer();
 }
 
+/**
+ * Checking what answer the player selected
+ */
+
 function clickedAnswer() {
   const answers = document.getElementsByClassName("answer-btn");
   for (const answer of answers) {
@@ -153,6 +172,10 @@ function clickedAnswer() {
       });
   }
 }
+
+/**
+ * Checking if the player answer matches the correct answer
+ */
 
 function checkAnswer(){
     if (document.getElementsByClassName("selected").length === 0) {
@@ -190,9 +213,17 @@ function checkAnswer(){
     }
 }
 
+/**
+ * Function for keeping track of the player score
+ */
+
 function incrementScore() {
   score.textContent = parseInt(score.innerText) + 1;
 }
+
+/**
+ * Creating the endgame message
+ */
 
 function endGame() {
   question.textContent = `Congratulation!`;
@@ -201,10 +232,21 @@ function endGame() {
   answerButtons.remove();
   submitButton.remove();
   nextButton.remove();
+  time.classList.add("hidden");
   newGame.classList.remove("hidden");
   feedbackContent.classList.remove("hidden");
   score.textContent = `You answered correctly to ${score.innerText} out of ${questions.length} questions!`;
 }
+
+  /**
+   * Create a feedback area at the end of the game
+   */
+
+  document.getElementById("feedback-submit").addEventListener("click", function() {
+    console.log(document.getElementById("feedback-area").value);
+    feedbackContent.innerHTML = `<h3>Thank you for your feedback!</h3>`;
+  })
+  });
 
 function shuffleArray(array) {
   const arrayLength = array.length;
@@ -217,6 +259,5 @@ function shuffleArray(array) {
     array[i] = array[randomIndex];
     array[randomIndex] = temp;
   }
-
 }
 
