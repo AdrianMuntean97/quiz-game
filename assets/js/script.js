@@ -17,9 +17,6 @@ const timer = document.getElementById("timer");
 const feedbackContent = document.getElementById("feedback-content");
 
 /**
- * Creating the main interface where players select their name
- */
-/**
  * Event listener on document for when the page is loaded.
  */
 document.addEventListener("DOMContentLoaded", function() {
