@@ -27,7 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
   //Click event on the button start game
   startGame.addEventListener("click", function() {
 
-    playerName.textContent = inputName.value;
+    const nameValue = inputName.value.trim();
+    if(nameValue.length === 0) {
+      inputName.focus();
+      return;
+    }
+    playerName.textContent = nameValue;
     document.getElementById("player-name").classList.add("hidden");
     document.getElementById("game").classList.remove("hidden");
     timerFunction();
