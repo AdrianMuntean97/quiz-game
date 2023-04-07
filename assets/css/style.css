@@ -34,6 +34,13 @@
     margin-top: 1.5rem;
   }
 
+  label {
+    display: inherit;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    font-weight: bold;
+  }
+
   #timer {
     margin-top: 1rem;
   }
