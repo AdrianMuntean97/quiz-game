@@ -13,7 +13,7 @@ The quiz game is a website where users can play a small quiz game about general 
 ![Landing Page](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/landing-page.png?raw=true) <br><br>
 
 - Main Game Page <br><br>
-![Game Area](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/game-area.png=raw=true) <br><br>
+![Game Area](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/game-area.png?raw=true) <br><br>
     - Once the game has started the user will have to answer 30 questions with a time limit of 15 minutes
     - Each question has 4 answer variants and the order is randomly generated.
     - The order of the question is randomly generated as well.
