@@ -36,5 +36,19 @@ The quiz game is a website where users can play a small quiz game about general 
 - I have tested the game and all it's functions work properly.
 - I have been testing the game on 3 different devices(a desktop and 2 mobiles), and the game works properly on all 3 of them.
 - I have confirmed that the text is easy to read on both desktop and mobile devices and that the page is responsive using the dev tool.
+- I have tested the code using all 3 validators for HTML CSS and JavaScript resulting in no errors. <br><br>
+[Lighthouse](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/lighthouse.png?raw=true) <br><br>
 
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+    - In the GitHub repository, navigate to the Settings tab
+    - From the source section drop-down menu, select the Master Branch
+    - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+    The live link can be found here - https://adrianmuntean97.github.io/quiz-game/
+
+## Credits
+
+- All the questions and answers were found on google.
 
