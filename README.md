@@ -27,9 +27,9 @@ The quiz game is a website where users can play a small quiz game about general 
 - End Game Section
     - At the end game section the player will have the option to submit a review.
     - In case the player's time has expired the user will get a "Time expired!" at the end of the game <br><br>
-    [Time Expired](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/time-expired.png?raw=true) <br><br>
+    ![Time Expired](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/time-expired.png?raw=true) <br><br>
     - In case the user answer to all the questions they will get a "Congratulation!" message and a message in which he knows how many answers he got right <br><br>
-    [End Game](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/game-ending.png?raw=true) <br><br>
+    ![End Game](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/game-ending.png?raw=true) <br><br>
 
 ## Testing
 
@@ -37,7 +37,7 @@ The quiz game is a website where users can play a small quiz game about general 
 - I have been testing the game on 3 different devices(a desktop and 2 mobiles), and the game works properly on all 3 of them.
 - I have confirmed that the text is easy to read on both desktop and mobile devices and that the page is responsive using the dev tool.
 - I have tested the code using all 3 validators for HTML CSS and JavaScript resulting in no errors. <br><br>
-[Lighthouse](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/lighthouse.png?raw=true) <br><br>
+![Lighthouse](https://github.com/AdrianMuntean97/quiz-game/blob/main/media/lighthouse.png?raw=true) <br><br>
 
 ## Deployment
 
